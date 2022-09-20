@@ -1,4 +1,4 @@
-const { dblocal }= require('../config/dbConfig')
+const { poolaws }= require('../config/dbConfig')
 const piCtrl= {};
 
 
@@ -59,7 +59,7 @@ piCtrl.getHome= async(req, res)=>{
 
 piCtrl.getDependencias= async (req, res)=>{
     try {
-        const response = await dblocal.query(`select * from usuarios.tbl_compas`);
+        const response = await poolaws.query(`select * from dependencias.tbl_dependencias`);
         res.status(200).json({
             Autor: "Alcadía de Medellín-DAP-USPDM",
             data: response.rows

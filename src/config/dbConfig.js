@@ -17,7 +17,7 @@ const poolaws = new Pool ({
     host: 'dbsubpiee-aws.cxzcrpauh1po.us-east-2.rds.amazonaws.com',
     database: 'dbsubpiee',
     password: process.env.PASS,
-    port: 5432,
+    port: process.env.PGPORT,
     max: 20,
     idleTimeoutMillis: 300000000,
     connectionTimeoutMillis: 100000000,
